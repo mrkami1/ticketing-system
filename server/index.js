@@ -15,7 +15,7 @@ mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGODB_LOGIN);
 
 app.post('/api/register', async(req, res) => {
-    console.log(req.body);
+    console.log('Received registration info:' + req.body);
     try {
         await User.create({
             name: req.body.name,
@@ -31,7 +31,7 @@ app.post('/api/register', async(req, res) => {
 })
 
 app.post('/api/login', async(req, res) => {
-    console.log(req.body);
+    console.log('Received login info:' + req.body);
     const user = await User.findOne({
         email: req.body.email,
         password: req.body.password
