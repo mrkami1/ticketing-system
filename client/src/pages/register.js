@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import './App.css';
+import { useState, React } from 'react';
+import { Link } from 'react-router-dom'
 
 //Frontend
 
-function App() {
+const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -38,10 +38,11 @@ function App() {
                 <br />
                 <input type="submit" value="Register"/>
             </form>
+            <Link to='/'>Sign in instead</Link>
         </div>
         
         
     );
 }
 
-export default App;
+export default Register;
